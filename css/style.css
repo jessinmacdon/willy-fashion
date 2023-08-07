@@ -190,28 +190,20 @@ a {
 
 .user-navigation .login-link {
     position: relative;
-    padding-left: 5px;
+    display: flex;
+    padding-left: 25px;
     width: 135px;
     text-align: right;
+    opacity: 0.4;
+    align-items: center;
 }
 
-.login-link::before {
-    content: "";
-    position: absolute;
-    top: 27px;
-    left: 10px;
-    width: 16px;
-    height: 18px;
-    background-image: url("../img/login.svg");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    opacity: 0.3;
-}
-
-.login-link:hover::before,
-.login-link:focus::before,
-.login-link:active::before {
+.user-navigation .login-link:hover {
     opacity: 1;
+}
+
+.user-navigation .login-link i {
+    margin-right: 6px;
 }
 
 .container {
@@ -936,7 +928,7 @@ a {
     padding: 60px 0;
     color: #ffffff;
     border-color: #212121;
-    background-image: url("../img/pattern-dark.jpg");
+    background-color: black;
     background-position: 0 0;
     background-repeat: repeat;
 }
@@ -951,7 +943,7 @@ a {
 
 .footer-contacts {
     width: 320px;
-    margin: 0;
+    margin: 30px 0 0;
     margin-right: 70px;
 }
 
@@ -968,6 +960,7 @@ a {
 .footer-social {
     width: 145px;
     text-align: center;
+    margin-top: 30px;
 }
 
 .footer-social ul {
@@ -975,7 +968,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 141px;
-    margin: 0 auto;
+    margin: 30px auto 0;
     padding: 0;
     list-style: none;
 }
@@ -1004,25 +997,15 @@ a {
     fill: #000000;
 }
 
-.footer-copyright {
+.footer-logo {
     width: 150px;
     margin: 0;
     margin-left: auto;
     text-align: center;
 }
 
-.footer-copyright .button {
-    display: block;
-    margin-right: 0;
-}
-
-.footer-copyright b {
-    display: block;
-    margin-bottom: 24px;
-}
-
-.footer-copyright .button:hover,
-.footer-copyright .button:focus {
+.footer-logo .button:hover,
+.footer-logo .button:focus {
     color: #000000;
     background-color: #ffffff;
 }
@@ -1066,202 +1049,6 @@ a {
     80% {
         transform: translateX(10px);
     }
-}
-
-.modal {
-    position: fixed;
-    display: none;
-    color: #000000;
-    background-color: #f8f3f0;
-    background-image: url("img/pattern-light.jpg");
-    background-position: 0 0;
-    background-repeat: repeat;
-    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
-}
-
-.modal-show {
-    display: block;
-    animation: bounce 0.6s;
-}
-
-.modal-error {
-    animation: shake 0.6s;
-}
-
-.modal-login {
-    top: 120px;
-    left: 50%;
-    width: 300px;
-    margin-left: -230px;
-    padding: 50px 80px;
-}
-
-.modal-close {
-    position: absolute;
-    top: 0;
-    right: -34px;
-    width: 22px;
-    height: 22px;
-    font-size: 0;
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-}
-
-.modal-close::before,
-.modal-close::after {
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 2px;
-    width: 19px;
-    height: 3px;
-    background-color: #d0d0d0;
-}
-
-.modal-close::before {
-    transform: rotate(45deg);
-}
-
-.modal-close::after {
-    transform: rotate(-45deg);
-}
-
-.modal-login h2 {
-    margin: 0;
-    margin-bottom: 20px;
-    font-size: 30px;
-    line-height: 42px;
-}
-
-.modal-description {
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-.login-form p {
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
-    box-sizing: border-box;
-    width: 300px;
-    padding: 10px 15px;
-    padding-right: 40px;
-    font: inherit;
-    color: #000000;
-    text-transform: uppercase;
-    background-color: #f9f6f3;
-    border: 2px solid #000000;
-}
-
-.login-form input:focus {
-    border-color: #663d15;
-}
-
-.login-form .login-help {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 15px 0;
-}
-
-.login-icon-user {
-    background-image: url("../img/user.svg");
-    background-position: 270px center;
-    background-repeat: no-repeat;
-}
-
-.login-icon-password {
-    background-image: url("../img/lock.svg");
-    background-position: 270px center;
-    background-repeat: no-repeat;
-}
-
-.login-checkbox {
-    position: relative;
-    padding-left: 30px;
-    cursor: pointer;
-}
-
-.login-checkbox:hover,
-.login-checkbox:focus {
-    color: #663d15;
-}
-
-.login-checkbox input[type="checkbox"]+.checkbox-indicator {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 17px;
-    height: 17px;
-    border: 2px solid #000000;
-}
-
-.login-checkbox input[type="checkbox"]:focus+.checkbox-indicator {
-    border-color: #663d15;
-    outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-}
-
-.login-checkbox input[type="checkbox"]:checked+.checkbox-indicator::before,
-.login-checkbox input[type="checkbox"]:checked+.checkbox-indicator::after {
-    content: "";
-    position: absolute;
-    top: 8px;
-    left: 1px;
-    width: 15px;
-    height: 2px;
-    background-color: #000000;
-}
-
-.login-checkbox input[type="checkbox"]:checked+.checkbox-indicator::before {
-    transform: rotate(45deg);
-}
-
-.login-checkbox input[type="checkbox"]:checked+.checkbox-indicator::after {
-    transform: rotate(-45deg);
-}
-
-.restore {
-    color: #000000;
-    text-decoration: underline;
-}
-
-.restore:hover,
-.restore:focus {
-    text-decoration: none;
-}
-
-.login-form .button {
-    width: 100%;
-    margin-right: 0;
-}
-
-.modal-map {
-    top: 50%;
-    left: 50%;
-    width: 766px;
-    height: 561px;
-    margin-top: -280px;
-    margin-left: -390px;
-    border: 7px solid white;
-}
-
-.modal-map p {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    margin: 0;
-}
-
-.modal-map iframe {
-    position: relative;
-    z-index: 2;
-    border: none;
 }
 
 footer i {

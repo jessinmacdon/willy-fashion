@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link href="css/style.css" rel="stylesheet" />
 		<!-- fav-icon -->
-		<link rel="shortcut icon" href="assets/logo/fav-icon.png"/>
+		<link rel="shortcut icon" href="assets/logo/fav-icon.png" />
 	</head>
 	<body>
 		<header class="main-header">
@@ -34,15 +34,19 @@
 				<div class="main-navigation-wrapper">
 					<div class="container">
 						<ul class="site-navigation">
-							<li><a href="#info-point">Home</a></li>
+							<li class="site-navigation-current">
+								<a>Home</a>
+							</li>
 							<li><a href="price.html">Price list</a></li>
+							<li><a href="gallery.html">Our gallery</a></li>
 							<li><a href="#contacts-point">Contact</a></li>
 						</ul>
 						<ul class="user-navigation">
 							<li>
-								<a class="login-link" href="#contacts-point"
-									>Book Appointment</a
-								>
+								<a class="login-link" href="#contacts-point">
+									<i class="bx bxs-calendar-check"></i>
+									<span>Book Appointment</span>
+								</a>
 							</li>
 						</ul>
 					</div>
@@ -113,23 +117,17 @@
 
 				<section class="gallery">
 					<h2>Photo gallery</h2>
-					<div class="gallery-container">
-						<figure class="gallery-content">
-							<a href="#"
-								><img
-									src="img/studio.jpg"
-									width="286"
-									height="164"
-									alt="gallery"
-							/></a>
-						</figure>
-						<button class="button gallery-button gallery-button-back" disabled
-							>Back</button
-						>
-						<button class="button gallery-button gallery-button-next"
-							>Next</button
-						>
-					</div>
+
+					<img
+						src="assets/background-image.jpeg"
+						alt="Interior of the shop"
+						class="shop-view"
+					/>
+					<a
+						class="button contacts-button contacts-button-map"
+						href="gallery.html"
+						>Go to Gallery</a
+					>
 				</section>
 			</div>
 
@@ -309,7 +307,7 @@
 						</li>
 					</ul>
 				</div>
-				<a href="index.html" class="main-header-logo footer-copyright">
+				<a href="index.html" class="main-header-logo footer-logo">
 					<img
 						src="assets/logo/logo.png"
 						width="368"
@@ -320,23 +318,7 @@
 			</div>
 		</footer>
 
-		<section class="modal modal-map">
-			<h2 class="visually-hidden">Visit us</h2>
-			<div class="google-maps">
-				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2426.1949236511223!2d13.34385967715391!3d52.547998934155615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8511ef896b609%3A0x5b462a1dc3185b95!2sWilly%20Fashion%20%2B237!5e0!3m2!1sen!2sde!4v1690823393717!5m2!1sen!2sde"
-					width="600"
-					height="450"
-					style="border: 0"
-					allowfullscreen=""
-					loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"
-				></iframe>
-			</div>
-
-			<button class="modal-close" type="button">Close</button>
-		</section>
-
 		<script src="js/popup.js"></script>
+		<script src="js/gallery.js"></script>
 	</body>
 </html>
