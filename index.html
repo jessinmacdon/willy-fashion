@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Willy Fashion</title>
+		<!-- fav-icon -->
+		<link rel="shortcut icon" href="assets/logo/fav-icon.png" />
+
 		<!-- google fonts -->
 		<link
 			href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic"
@@ -17,8 +21,6 @@
 		<!-- style sheets -->
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link href="css/style.css" rel="stylesheet" />
-		<!-- fav-icon -->
-		<link rel="shortcut icon" href="assets/logo/fav-icon.png" />
 	</head>
 	<body>
 		<header class="main-header">
@@ -31,6 +33,11 @@
 						alt="Willy fashion logo"
 					/>
 				</a>
+				<button class="hamburger-button">
+					<span class="hamburger-icon"></span>
+					<span class="hamburger-icon"></span>
+					<span class="hamburger-icon"></span>
+				</button>
 				<div class="main-navigation-wrapper">
 					<div class="container">
 						<ul class="site-navigation">
@@ -38,12 +45,12 @@
 								<a>Home</a>
 							</li>
 							<li><a href="price.html">Price list</a></li>
-							<li><a href="gallery.html">Our gallery</a></li>
+							<li><a href="gallery.html">Gallery</a></li>
 							<li><a href="#contacts-point">Contact</a></li>
 						</ul>
 						<ul class="user-navigation">
 							<li>
-								<a class="login-link" href="#contacts-point">
+								<a class="appointment-link" href="#contacts-point">
 									<i class="bx bxs-calendar-check"></i>
 									<span>Book Appointment</span>
 								</a>
@@ -55,10 +62,7 @@
 		</header>
 
 		<main class="container">
-			<h1 class="visually-hidden">Hidden heading</h1>
-
 			<section class="features" id="info-point">
-				<h2 class="visually-hidden">Hide</h2>
 				<ul class="features-list">
 					<li class="feature-item">
 						<h3>Premium Haircut</h3>
@@ -243,9 +247,7 @@
 					Seestraße 122, <br />
 					13353 Berlin Germany<br />
 					<span class="call-us-footer">Tel: +49 1521 6257613</span><br />
-					<span class="call-us-footer" style="margin-left: 20px"
-						>+49 1521 4663624</span
-					>
+					<span class="call-us-footer">+49 1521 4663624</span>
 				</p>
 				<div class="footer-social">
 					<b>reach us on</b>
@@ -307,17 +309,20 @@
 						</li>
 					</ul>
 				</div>
-				<a href="index.html" class="main-header-logo footer-logo">
-					<img
-						src="assets/logo/logo.png"
-						width="368"
-						height="153"
-						alt="Willy fashion logo"
-					/>
-				</a>
+				<div class="footer-logo-container">
+					<a href="index.html" class="footer-logo">
+						<img
+							src="assets/logo/logo.png"
+							width="368"
+							height="153"
+							alt="Willy fashion logo"
+						/>
+					</a>
+				</div>
 			</div>
 		</footer>
 
+		<script src="js/hamburger.js"></script>
 		<script src="js/popup.js"></script>
 		<script src="js/gallery.js"></script>
 	</body>
