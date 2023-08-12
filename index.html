@@ -8,8 +8,10 @@
 		<link rel="shortcut icon" href="assets/logo/fav-icon.png" />
 
 		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic"
+			href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
 			rel="stylesheet"
 		/>
 		<!-- boxicons -->
@@ -20,52 +22,69 @@
 
 		<!-- style sheets -->
 		<link rel="stylesheet" href="css/normalize.css" />
-		<link href="css/style.css" rel="stylesheet" />
+		<!-- <link href="css/style.css" rel="stylesheet" /> -->
+		<link href="css/new-styles.css" rel="stylesheet" />
 	</head>
 	<body>
-		<header class="main-header">
-			<nav class="main-navigation">
-				<a href="index.html" class="main-header-logo">
+		<header class="top">
+			<nav class="top-nav">
+				<div class="nav-logo nav-element">
+					<a href="index.html"> </a>
 					<img
 						src="assets/logo/logo.png"
 						width="368"
 						height="153"
 						alt="Willy fashion logo"
 					/>
-				</a>
-				<button class="hamburger-button">
-					<span class="hamburger-icon"></span>
-					<span class="hamburger-icon"></span>
-					<span class="hamburger-icon"></span>
-				</button>
-				<div class="main-navigation-wrapper">
-					<div class="container">
-						<ul class="site-navigation">
-							<li class="site-navigation-current">
-								<a>Home</a>
+				</div>
+				<label class="hamburger">
+					<input type="checkbox" />
+					<svg viewBox="0 0 32 32">
+						<path
+							class="line line-top-bottom"
+							d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+						></path>
+						<path class="line" d="M7 16 27 16"></path>
+					</svg>
+				</label>
+
+				<!-- navigation for large screens -->
+				<div class="nav-links-wrapper">
+					<div class="nav-left">
+						<ul class="nav-element navigate-links">
+							<li class="active">
+								<a href="index.html"></a>
+								<span>Home</span>
 							</li>
-							<li><a href="price.html">Price list</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="#contacts-point">Contact</a></li>
-						</ul>
-						<ul class="user-navigation">
-							<li>
-								<a class="appointment-link" href="#contacts-point">
-									<i class="bx bxs-calendar-check"></i>
-									<span>Book Appointment</span>
-								</a>
+							<li
+								><a href="price.html"></a>
+								<span>Price list</span>
+							</li>
+							<li
+								><a href="gallery.html"></a>
+								<span>Gallery</span>
+							</li>
+							<li
+								><a href="#contacts-point"></a>
+								<span>Contact</span>
 							</li>
 						</ul>
 					</div>
+					<ul class="nav-right nav-element">
+						<li>
+							<a class="appointment-link" href="#contacts-point"> </a>
+							<i class="bx bxs-calendar-check icon"></i>
+							<span>Book Appointment</span>
+						</li>
+					</ul>
 				</div>
 			</nav>
 		</header>
-
-		<main class="container">
-			<section class="features" id="info-point">
-				<ul class="features-list">
-					<li class="feature-item">
-						<h3>Premium Haircut</h3>
+		<main class="main-container">
+			<div class="card-container" id="info-point">
+				<ul class="hero-list">
+					<li class="hero-item">
+						<h2>Premium Haircut</h2>
 						<p>
 							Experience the pinnacle of grooming excellence with our premium
 							haircuts. Our skilled barbers will deliver precision cuts tailored
@@ -73,8 +92,8 @@
 							absolute best
 						</p>
 					</li>
-					<li class="feature-item">
-						<h3>Dreads and Rastas</h3>
+					<li class="hero-item">
+						<h2>Dreads and Rastas</h2>
 						<p
 							>Embrace your individuality with our expert dreadlocks and rasta
 							services. Our talented stylists will create and maintain stunning,
@@ -82,8 +101,8 @@
 							hairstyles</p
 						>
 					</li>
-					<li class="feature-item">
-						<h3>Unisex Hair Salon</h3>
+					<li class="hero-item">
+						<h2>Unisex Hair Salon</h2>
 						<p
 							>Step into a welcoming space where style knows no gender. Our
 							unisex hair salon offers top-notch hair care and cutting-edge
@@ -92,156 +111,174 @@
 						>
 					</li>
 				</ul>
-			</section>
-
-			<div class="index-columns">
-				<section class="news" id="news-point">
-					<h2>Updates</h2>
-					<ul class="news-list">
-						<li class="news-item">
-							<p>
-								Exciting News! Willy Fashion is thrilled to introduce our
-								brand-new female section, offering a range of exquisite hair
-								services. Book your appointment today to experience the latest
-								in haircare tailored just for you.
-							</p>
-							<time datetime="2023-08-05">Aug 5th</time>
-						</li>
-						<li class="news-item">
-							<p>
-								Book your appointment Now! Enjoy fast services with no waiting
-								periods. Discover the complete range of our offerings. Check out
-								our Prices Page for more details on our exceptional offerings.
-							</p>
-							<time datetime="2023-08-08">Aug 8th</time>
-						</li>
-					</ul>
-					<a class="button" href="index.html#contacts-point">Book Now</a>
-				</section>
-
-				<section class="gallery">
-					<h2>Photo gallery</h2>
-
-					<img
-						src="assets/background-image.jpeg"
-						alt="Interior of the shop"
-						class="shop-view"
-					/>
-					<a
-						class="button contacts-button contacts-button-map"
-						href="gallery.html"
-						>Go to Gallery</a
-					>
-				</section>
 			</div>
+			<div class="card-container">
+				<div class="middle">
+					<div class="updates" id="updatesPoint">
+						<h2>Updates</h2>
+						<div class="updates-list">
+							<div class="news-item">
+								<span>
+									<span><strong> Exciting News!</strong></span> Willy Fashion is
+									thrilled to introduce our brand-new female section, offering a
+									range of exquisite hair services. Book your appointment today
+									to experience the latest in haircare tailored just for you.
+								</span>
+								<time datetime="2023-08-05">Aug 5th</time>
+							</div>
+							<div class="news-item">
+								<span>
+									<span><strong> Book your appointment Now!</strong></span>
+									Enjoy fast services with no waiting periods. Discover the
+									complete range of our offerings. Check out our Prices Page for
+									more details on our exceptional offerings.
+								</span>
+								<time datetime="2023-08-08">Aug 8th</time>
+							</div>
+						</div>
+						<a class="pry-btn" href="index.html#contacts-point">Book Now</a>
+					</div>
 
-			<div class="index-columns">
-				<section class="contacts" id="contacts-point">
-					<h2>Where to find us</h2>
-					<p>
-						Willy Fashion<br />
-						Seestraße 122, <br />
-						13353 Berlin Germany<br />
-						<span class="call-us">Tel: +49 1521 6257613</span><br />
-						<span class="call-us" style="margin-left: 5px"
-							>or: +49 1521 4663624</span
+					<div class="gallery-preview">
+						<h2>Photo gallery</h2>
+						<div class="shop-view-container">
+							<img
+								src="assets/background-image.jpeg"
+								alt="Interior of the shop"
+								class="shop-view"
+							/>
+						</div>
+						<a class="pry-btn" href="gallery.html"> Go to Gallery </a>
+					</div>
+				</div>
+			</div>
+			<div class="card-container">
+				<div class="contacts-container">
+					<div class="contacts" id="contacts-point">
+						<h2>Where to find us</h2>
+						<div>
+							<strong> Willy Fashion</strong><br />
+							<div class="address">
+								Seestraße 122, <br />
+								13353 Berlin Germany
+							</div>
+							<div class="call-us">
+								<span class="call-us">Tel: +49 1521 6257613</span><br />
+								<span class="call-us" style="margin-left: 5px"
+									>or: +49 1521 4663624</span
+								>
+							</div>
+						</div>
+						<p>
+							<strong>
+								Beat the Weekend Rush! Experience priority services on weekdays
+								and special appointments on selected public holidays and
+								Sundays, available for both women and men. Book now for a
+								seamless salon experience.
+							</strong>
+						</p>
+						<p>
+							<strong>
+								Opening hours:<br />
+								Mon - Sat: 10:00 to 22:00<br />
+								Sun: Special service only with appointment
+							</strong>
+						</p>
+						<a
+							class="pry-btn"
+							href="https://goo.gl/maps/VUw1aS9ys7ZHk4TQ9"
+							target="_blank"
+							>Get directions</a
 						>
-					</p>
-					<p>
-						Beat the Weekend Rush! Experience priority services on weekdays and
-						special appointments on selected public holidays and Sundays,
-						available for both women and men. Book now for a seamless salon
-						experience.
-					</p>
-					<p>
-						Opening hours:<br />
-						Mon - Sat: 10:00 to 22:00<br />
-						Sun: Special service only by appointment
-					</p>
-					<a
-						class="button contacts-button contacts-button-map"
-						href="https://goo.gl/maps/VUw1aS9ys7ZHk4TQ9"
-						target="_blank"
-						>Get directions</a
-					>
-				</section>
+					</div>
 
-				<section class="appointment">
-					<h2>Book an appointment</h2>
-					<p class="appointment-info">
-						We accept appointments for several of our services. Appointments are
-						required for some services.
-						<span><a href="price.html">See our services</a></span>
-					</p>
-					<form
-						class="appointment-form"
-						action="https://hook.eu2.make.com/nmxg8s68yh3q1iy8udq6o8awh496e6la"
-						method="POST"
-					>
-						<p class="appointment-item">
-							<label for="appointment-date">Date</label>
-							<input
-								id="appointment-date"
-								type="text"
-								name="date"
-								value=""
-								placeholder="08.10.2017"
-							/>
-						</p>
-						<p class="appointment-item">
-							<label for="appointment-time">Time</label>
-							<input
-								id="appointment-time"
-								type="text"
-								name="time"
-								value=""
-								placeholder="10:00"
-							/>
-						</p>
-						<p class="appointment-item">
-							<label for="appointment-name">Name</label>
-							<input
-								id="appointment-name"
-								type="text"
-								name="name"
-								value=""
-								placeholder="Enter your name"
-							/>
-						</p>
-						<p class="appointment-item">
-							<label for="appointment-phone">Phone number</label>
-							<input
-								id="appointment-phone"
-								type="tel"
-								name="phone"
-								placeholder="+ 38 093 456-78-90"
-							/>
-						</p>
-						<p class="appointment-item">
-							<label for="appointment-service">Select Service</label>
-							<select id="appointment-service" name="service">
-								<option value="priority-cut">Priority Cut</option>
-								<option value="colour-taint">Colour/Taint</option>
-								<option value="special-service"
-									>Special service (Cut on Sundays and holidays)</option
-								>
-								<option value="dreadlocks-rastas">Dreadlocks and Rastas</option>
-								<option value="corn-rows">Corn rows</option>
-								<option value="braids">Braids</option>
-								<option value="special-request"
-									>Special request (Other services)</option
-								>
-							</select>
-						</p>
-
-						<button class="button" type="submit">Send</button>
-					</form>
-				</section>
+					<div class="appointment">
+						<h2>Book an appointment</h2>
+						<div class="appointment-info">
+							We accept appointments for several of our services. Appointments
+							are required for some services.
+						</div>
+						<span class="see-prices">
+							<a href="price.html"
+								>Click here to check out our services and prices</a
+							>
+						</span>
+						<form
+							class="appointment-form"
+							action="https://hook.eu2.make.com/nmxg8s68yh3q1iy8udq6o8awh496e6la"
+							method="POST"
+						>
+							<div class="details-group">
+								<div class="details-item appointment-item">
+									<label for="appointment-date">Date</label>
+									<input
+										id="appointment-date"
+										type="date"
+										name="date"
+										value=""
+										required
+									/>
+								</div>
+								<div class="details-item appointment-item">
+									<label for="appointment-time">Time</label>
+									<input
+										id="appointment-time"
+										type="time"
+										name="time"
+										value=""
+										required
+									/>
+								</div>
+							</div>
+							<div class="details-group">
+								<div class="details-item appointment-item">
+									<label for="appointment-name">Name</label>
+									<input
+										id="appointment-name"
+										type="text"
+										name="name"
+										value=""
+										placeholder="Enter your name"
+										required
+									/>
+								</div>
+								<div class="details-item appointment-item">
+									<label for="appointment-phone">Phone number</label>
+									<input
+										id="appointment-phone"
+										type="tel"
+										name="phone"
+										placeholder="+49 1xx xxx-xxx38"
+										required
+									/>
+								</div>
+							</div>
+							<div class="form-group appointment-item">
+								<label for="appointment-service">Select Service</label>
+								<select id="appointment-service" name="service">
+									<option value="priority-cut">Priority Cut</option>
+									<option value="colour-taint">Colour/Taint</option>
+									<option value="special-service"
+										>Special service (Cut on Sundays and holidays)</option
+									>
+									<option value="dreadlocks-rastas"
+										>Dreadlocks and Rastas</option
+									>
+									<option value="corn-rows">Corn rows</option>
+									<option value="braids">Braids</option>
+									<option value="special-request"
+										>Special request (Other services)</option
+									>
+								</select>
+							</div>
+						</form>
+						<button class="pry-btn form-btn" type="submit">Send</button>
+					</div>
+				</div>
 			</div>
 		</main>
-
-		<footer class="main-footer">
-			<div class="container">
+		<footer class="footer">
+			<div class="bottom">
 				<p class="footer-contacts">
 					Willy Fashion<br />
 					Seestraße 122, <br />
@@ -249,15 +286,17 @@
 					<span class="call-us-footer">Tel: +49 1521 6257613</span><br />
 					<span class="call-us-footer">+49 1521 4663624</span>
 				</p>
-				<div class="footer-social">
-					<b>reach us on</b>
+				<div class="social-links">
+					<h2>reach us on</h2>
 					<ul>
 						<li>
 							<a
 								class="social-button"
 								target="_blank"
 								href="https://www.instagram.com/tattoo.willy/?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"
-								><span class="visually-hidden">Instagram</span>
+							></a>
+							<span class="link-icon-container">
+								<span class="visually-hidden">Instagram</span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="24"
@@ -270,14 +309,17 @@
 									></path>
 									<circle cx="11.994" cy="11.979" r="3.003"></circle>
 								</svg>
-							</a>
+							</span>
 						</li>
 						<li>
 							<a
 								class="social-button"
 								target="_blank"
 								href="https://www.facebook.com/profile.php?id=100063655114476"
-								><span class="visually-hidden">Facebook</span>
+							>
+							</a>
+							<span class="link-icon-container">
+								<span class="visually-hidden">Facebook</span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="19"
@@ -289,10 +331,14 @@
 										fill="#fff"
 									></path>
 								</svg>
-							</a>
+							</span>
 						</li>
 						<li>
-							<a class="social-button" href="https://www.tiktok.com/@willyachu">
+							<a
+								class="social-button"
+								href="https://www.tiktok.com/@willyachu"
+							></a>
+							<span class="link-icon-container">
 								<span class="visually-hidden">TikTok</span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -305,22 +351,30 @@
 										d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
 									></path>
 								</svg>
-							</a>
+							</span>
 						</li>
 					</ul>
 				</div>
 				<div class="footer-logo-container">
-					<a href="index.html" class="footer-logo">
-						<img
-							src="assets/logo/logo.png"
-							width="368"
-							height="153"
-							alt="Willy fashion logo"
-						/>
-					</a>
+					<a href="index.html" class="footer-logo"></a>
+					<img
+						src="assets/logo/logo.png"
+						width="368"
+						height="153"
+						alt="Willy fashion logo"
+					/>
 				</div>
 			</div>
 		</footer>
+
+		<!-- <main class="container">
+			
+
+			
+
+			
+		</main>
+-->
 
 		<script src="js/hamburger.js"></script>
 		<script src="js/popup.js"></script>

@@ -845,7 +845,7 @@ footer i {
 /* media queries for medium and small screns */
 @media screen and (max-width: 856px) {
 
-    body {
+    /* body {
         font-size: 16px;
         width: 100vw;
         position: relative;
@@ -959,5 +959,5 @@ footer i {
         justify-content: center;
         align-items: center;
         align-content: center;
-    }
+    } */
 }
