@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Willy Fashion</title>
+		<title>Willy Fashion | Home</title>
 		<!-- fav-icon -->
 		<link rel="shortcut icon" href="assets/logo/fav-icon.png" />
 
@@ -22,8 +22,7 @@
 
 		<!-- style sheets -->
 		<link rel="stylesheet" href="css/normalize.css" />
-		<!-- <link href="css/style.css" rel="stylesheet" /> -->
-		<link href="css/new-styles.css" rel="stylesheet" />
+		<link href="css/styles.css" rel="stylesheet" />
 	</head>
 	<body>
 		<header class="top">
@@ -152,9 +151,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="card-container">
+			<div class="card-container" id="contacts-point">
 				<div class="contacts-container">
-					<div class="contacts" id="contacts-point">
+					<div class="contacts">
 						<h2>Where to find us</h2>
 						<div>
 							<strong> Willy Fashion</strong><br />
@@ -366,15 +365,38 @@
 				</div>
 			</div>
 		</footer>
-
-		<!-- <main class="container">
-			
-
-			
-
-			
-		</main>
--->
+		<!-- modal to display menu on small screens -->
+		<div class="nav-sm-modal">
+			<div class="nav-links-wrapper-sm">
+				<div class="nav-left">
+					<ul class="nav-element-sm navigate-links-sm">
+						<li class="active">
+							<a href="index.html"></a>
+							<span>Home</span>
+						</li>
+						<li>
+							<a href="price.html"></a>
+							<span>Price list</span>
+						</li>
+						<li>
+							<a href="gallery.html"></a>
+							<span>Gallery</span>
+						</li>
+						<li
+							><a href="index.html#contacts-point"></a>
+							<span>Contact</span>
+						</li>
+					</ul>
+				</div>
+				<ul class="nav-right-sm nav-element">
+					<li>
+						<a class="appointment-link" href="index.html#contacts-point"> </a>
+						<i class="bx bxs-calendar-check icon"></i>
+						<span>Book Appointment</span>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 		<script src="js/hamburger.js"></script>
 		<script src="js/popup.js"></script>
