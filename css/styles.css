@@ -139,6 +139,15 @@ a:visited {
     height: 100px;
 }
 
+/* error handling */
+.input-error {
+    border: 2px solid red;
+}
+
+#loaderModal {
+    background-color: var(--main-bg-color);
+}
+
 /* hamburger-menu */
 .hamburger {
     display: none;

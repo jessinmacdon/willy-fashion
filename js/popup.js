@@ -1,71 +1,105 @@
-  var link = document.querySelector(".login-link");
-  
-  var popup = document.querySelector(".modal-login");
-  var close = popup.querySelector(".modal-close");
-  
-  var form = popup.querySelector("form");
-  var login = popup.querySelector("[name=login]");
-  var password = popup.querySelector("[name=password]");
-  
-  var storage = localStorage.getItem("login");
-  
-  link.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    popup.classList.add("modal-show");
-    
-    if (storage) {
-      login.value = storage;
-      password.focus();
-    } else {
-      login.focus();
-    }
-  });
-  
-  close.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    popup.classList.remove("modal-show");
-    popup.classList.remove("modal-error");
-  });
-  
-  form.addEventListener("submit", function (evt) {
-    if (!login.value || !password.value) {
-      evt.preventDefault();
-      popup.classList.remove("modal-error");
-      popup.offsetWidth = popup.offsetWidth;
-      popup.classList.add("modal-error");
-    } else {
-      localStorage.setItem("login", login.value);
-    }
-  });
-  
-  window.addEventListener("keydown", function (evt) {
-    if (evt.keyCode === 27) {
-      if (popup.classList.contains("modal-show")) {
-        popup.classList.remove("modal-show");
-        popup.classList.remove("modal-error");
-      }
-    }
-  });
-  
-  var mapLink = document.querySelector(".contacts-button-map");
+window.addEventListener("DOMContentLoaded", (event) => {
+	var form = document.getElementById("appointmentForm");
+	var modal = document.getElementById("loaderModal");
+	var successMessage = document.getElementById("successMessage");
+	var errorMessage = document.getElementById("errorMessage");
+	var loadingMessage = document.querySelector(".loading-message");
 
-  var mapPopup = document.querySelector(".modal-map");
-  var mapClose = mapPopup.querySelector(".modal-close");
-  
-  mapLink.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    mapPopup.classList.add("modal-show");
-  });
+	form.addEventListener("submit", function (event) {
+		event.preventDefault();
 
-  mapClose.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    mapPopup.classList.remove("modal-show");
-  });
+		// Get form fields by their IDs inside the event listener
+		var dateField = document.getElementById("appointmentDate");
+		var timeField = document.getElementById("appointmentTime");
+		var nameField = document.getElementById("appointmentName");
+		var phoneField = document.getElementById("appointmentPhone");
+		var serviceField = document.getElementById("appointmentService");
 
-  window.addEventListener("keydown", function (evt) {
-    if (evt.keyCode === 27) {
-      if (mapPopup.classList.contains("modal-show")) {
-        mapPopup.classList.remove("modal-show");
-      }
-    }
-  });
+		var rawDate = new Date(dateField.value);
+		var formattedDate = `${rawDate.getDate()}-${
+			rawDate.getMonth() + 1
+		}-${rawDate.getFullYear()}`;
+
+		// Check if any of the fields are empty
+		if (
+			formattedDate === "" ||
+			timeField.value === "" ||
+			nameField.value === "" ||
+			phoneField.value === "" ||
+			serviceField.value === "0"
+		) {
+			// Handle empty fields here, if needed
+			alert("Please fill out all fields and select a service.");
+			return;
+		}
+
+		// Show the modal and loading message
+		modal.style.display = "block";
+		loadingMessage.style.display = "block";
+		successMessage.style.display = "none";
+		errorMessage.style.display = "none";
+
+		// Delay hiding the loading message for 3 seconds
+		setTimeout(function () {
+			loadingMessage.style.display = "none";
+
+			// Construct the formData object inside the event listener
+			var formData = {
+				date: formattedDate,
+				time: timeField.value,
+				name: nameField.value,
+				phone: phoneField.value,
+				service: serviceField.value,
+			};
+
+			// Assuming you have your form data in an object named formData
+			var message = `New Appointment:
+          Name: ${formData.name}
+          Phone: ${formData.phone}
+          Date: ${formData.date}
+          Time: ${formData.time}
+          Service: ${formData.service}`;
+
+			// Adding newline characters between each element
+			message = message.replace(/(?:\r\n|\r|\n)/g, "\n");
+
+			fetch(form.action, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ message: message }),
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					// Handle response from your server if necessary
+					console.log(data);
+
+					// Show appropriate message inside the modal
+					if (data.success) {
+						loadingMessage.style.display = "none";
+						successMessage.style.display = "block";
+					} else {
+						loadingMessage.style.display = "none";
+						errorMessage.style.display = "block";
+					}
+				})
+				.catch((error) => {
+					// Handle errors if the request fails
+					console.error("Error sending form data:", error);
+
+					// Hide the modal and update its content
+					modal.style.display = "none";
+					errorMessage.style.display = "block";
+				});
+		}, 3000); // 3000 milliseconds = 3 seconds
+	});
+
+	function closeModal() {
+		// Close the modal and reset its content
+		modal.style.display = "none";
+		loadingMessage.style.display = "block";
+		successMessage.style.display = "none";
+		errorMessage.style.display = "none";
+	}
+});

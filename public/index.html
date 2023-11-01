@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Willy Fashion | Home</title>
 		<!-- fav-icon -->
-		<link rel="shortcut icon" href="assets/logo/fav-icon.png" />
+		<link rel="shortcut icon" href="../assets/logo/fav-icon.png" />
 
 		<!-- google fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,8 +30,8 @@
 		/>
 
 		<!-- style sheets -->
-		<link rel="stylesheet" href="css/normalize.css" />
-		<link href="css/styles.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/normalize.css" />
+		<link href="../css/styles.css" rel="stylesheet" />
 	</head>
 	<body>
 		<header class="top">
@@ -39,7 +39,7 @@
 				<div class="nav-logo nav-element">
 					<a href="index.html"> </a>
 					<img
-						src="assets/logo/logo.png"
+						src="../assets/logo/logo.png"
 						width="368"
 						height="153"
 						alt="Willy fashion logo"
@@ -73,14 +73,14 @@
 								<span>Gallery</span>
 							</li>
 							<li
-								><a href="#contacts-point"></a>
+								><a href="index.html#contacts-point"></a>
 								<span>Contact</span>
 							</li>
 						</ul>
 					</div>
 					<ul class="nav-right nav-element">
 						<li>
-							<a class="appointment-link" href="#contacts-point"> </a>
+							<a class="appointment-link" href="index.html#contacts-point"> </a>
 							<i class="bx bxs-calendar-check icon"></i>
 							<span>Book Appointment</span>
 						</li>
@@ -151,7 +151,7 @@
 						<h2>Photo gallery</h2>
 						<div class="shop-view-container">
 							<img
-								src="assets/background-image.jpeg"
+								src="../assets/background-image.jpeg"
 								alt="Interior of the shop"
 								class="shop-view"
 							/>
@@ -213,62 +213,70 @@
 						</span>
 						<form
 							class="appointment-form"
-							action="https://hook.eu2.make.com/nmxg8s68yh3q1iy8udq6o8awh496e6la"
+							id="appointmentForm"
+							action="http://localhost:3000/submit-form"
 							method="POST"
 						>
 							<div class="details-group">
 								<div class="details-item appointment-item">
-									<label for="appointment-date">Date</label>
+									<label for="appointmentName">Name</label>
 									<input
-										id="appointment-date"
-										type="date"
-										name="date"
-										class="form-control"
-										required
-									/>
-								</div>
-								<div class="details-item appointment-item">
-									<label for="appointment-time">Time</label>
-									<input
-										id="appointment-time"
-										type="time"
-										name="time"
-										class="form-control"
-										required
-									/>
-								</div>
-							</div>
-							<div class="details-group">
-								<div class="details-item appointment-item">
-									<label for="appointment-name">Name</label>
-									<input
-										id="appointment-name"
+										id="appointmentName"
 										type="text"
 										name="name"
 										class="form-control"
 										placeholder="Enter your name"
+										value=""
 										required
 									/>
 								</div>
 								<div class="details-item appointment-item">
-									<label for="appointment-phone">Phone number</label>
+									<label for="appointmentPhone">Phone number</label>
 									<input
-										id="appointment-phone"
+										id="appointmentPhone"
 										type="tel"
 										name="phone"
 										class="form-control"
+										value=""
 										placeholder="+49 1xx xxx-xxx38"
 										required
 									/>
 								</div>
 							</div>
+							<div class="details-group">
+								<div class="details-item appointment-item">
+									<label for="appointmentDate">Date</label>
+									<input
+										id="appointmentDate"
+										type="date"
+										name="date"
+										class="form-control"
+										value=""
+										required
+									/>
+								</div>
+								<div class="details-item appointment-item">
+									<label for="appointmentTime">Time</label>
+									<input
+										id="appointmentTime"
+										type="time"
+										name="time"
+										class="form-control"
+										value=""
+										required
+									/>
+								</div>
+							</div>
+
 							<div class="form-group appointment-item">
-								<label for="appointment-service">Select Service</label>
+								<label for="appointmentService">Select Service</label>
 								<select
-									id="appointment-service"
+									id="appointmentService"
 									name="service"
 									class="form-select"
+									required
 								>
+									<option value="0" selected>Select a service</option>
 									<option value="priority-cut">Priority Cut</option>
 									<option value="colour-taint">Colour/Taint</option>
 									<option value="special-service"
@@ -284,8 +292,8 @@
 									>
 								</select>
 							</div>
+							<button class="pry-btn form-btn" type="submit">Send</button>
 						</form>
-						<button class="pry-btn form-btn" type="submit">Send</button>
 					</div>
 				</div>
 			</div>
@@ -349,7 +357,7 @@
 						<li>
 							<a
 								class="social-button"
-								href="https://www.tiktok.com/@willyachu"
+								href="https://www.tiktok.com/@willyfashion1?_t=8ggWzNMWpEm&_r=1"
 							></a>
 							<span class="link-icon-container">
 								<span class="visually-hidden">TikTok</span>
@@ -371,7 +379,7 @@
 				<div class="footer-logo-container">
 					<a href="index.html" class="footer-logo"></a>
 					<img
-						src="assets/logo/logo.png"
+						src="../assets/logo/logo.png"
 						width="368"
 						height="153"
 						alt="Willy fashion logo"
@@ -412,6 +420,37 @@
 			</div>
 		</div>
 
+		<!-- loader modal -->
+		<div class="modal fade" tabindex="-1" id="loaderModal">
+			<div class="modal-dialog modal-fullscreen-md-down">
+				<div class="modal-content">
+					<div class="modal-head" id="loaderModalHead">
+						<i class="bx bx-x"></i>
+						<a href="#" data-bs-dismiss="modal"></a>
+					</div>
+					<div class="modal-body">
+						<div class="loading-message">
+							<div class="loader"></div>
+							<span class="loading-message">Sending booking request </span>
+						</div>
+						<div class="request-received">
+							<span class="success-message" id="successMessage"
+								>Successful</span
+							>
+							<span>
+								We have received your request. We will get back to you with a
+								confirmation.
+							</span>
+						</div>
+						<div class="error-message" id="errorMessage">
+							<span class="failed">Ooops! Something went wrong</span>
+							<span>Please try again or come back later</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- bootstrap js files -->
 		<script
 			src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -430,8 +469,7 @@
 		></script>
 
 		<!-- custom js files -->
-		<script src="js/hamburger.js"></script>
-		<script src="js/popup.js"></script>
-		<script src="js/gallery.js"></script>
+		<script src="../js/hamburger.js"></script>
+		<script src="../js/popup.js"></script>
 	</body>
 </html>
