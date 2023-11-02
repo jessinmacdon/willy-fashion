@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 //enable Cors - all requests
 app.use(cors());
-app.use(express.static('/public')); // Assuming your HTML files are in a 'public' folder
+app.use(express.static('/public'));
 
 app.post("/submit-form", async (req, res) => {
 	try {
