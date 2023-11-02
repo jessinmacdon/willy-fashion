@@ -64,12 +64,27 @@ window.addEventListener("DOMContentLoaded", (event) => {
 			.then((data) => {
 				console.log(data);
 
+				// Handle the response text as needed
 				if (data === "Accepted") {
+					// Handle success
 					loadingMessage.style.display = "none";
 					successMessage.style.display = "block";
+					// Show the modal
+					$("#loaderModal").modal("show");
+					// Hide the modal after 2 seconds
+					setTimeout(function () {
+						$("#loaderModal").modal("hide");
+					}, 2000);
 				} else {
+					// Handle failure
 					loadingMessage.style.display = "none";
 					errorMessage.style.display = "block";
+					// Show the modal
+					$("#loaderModal").modal("show");
+					// Hide the modal after 2 seconds
+					setTimeout(function () {
+						$("#loaderModal").modal("hide");
+					}, 2000);
 				}
 			})
 			.catch((error) => {
