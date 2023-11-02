@@ -2,7 +2,11 @@
     --text-color: #393939;
     --body-color: #ffffff;
     --main-bg-color: rgb(0, 0, 0, 0.8);
+    --main-bg-color-hover: rgb(0, 0, 0, 0.4);
     --main-bg-gallery: rgb(255, 255, 255, 0.8);
+    --nav-color-hover: rgb(255, 255, 255, 0.7);
+    --special-link-color: rgb(69, 197, 122);
+    --special-link-color-hover: rgb(69, 197, 122, 0.6);
     --header-bg: black;
     --h1-weight: 600;
     --h1-size: 17px;
@@ -51,6 +55,11 @@ button,
     color: var(--body-color);
     border: none;
     outline: none;
+}
+
+button:hover,
+.pry-btn:hover {
+    background-color: var(--main-bg-color-hover);
 }
 
 li {
@@ -117,6 +126,11 @@ a:visited {
     align-content: center;
 }
 
+.nav-element li:hover {
+    color: var(--nav-color-hover);
+}
+
+
 .nav-element li {
     position: relative;
     margin: 10px;
@@ -131,6 +145,11 @@ a:visited {
     width: 100%;
     height: 100%;
     z-index: 100;
+}
+
+.nav-element li.active-page:hover {
+    color: rgb(255, 255, 255);
+    ;
 }
 
 .nav-logo img {
@@ -268,10 +287,14 @@ time {
 }
 
 .see-prices a {
-    color: green;
+    color: var(--special-link-color);
     font-size: 18px;
     text-decoration: underline;
     text-underline-offset: 5px;
+}
+
+.see-prices a:hover {
+    color: var(--special-link-color-hover);
 }
 
 .appointment-form {
