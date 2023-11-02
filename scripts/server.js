@@ -11,7 +11,20 @@ app.use(bodyParser.json());
 
 //enable Cors - all requests
 app.use(cors());
-app.use(express.static('/public'));
+app.use(express.static("/public"));
+
+// Define routes for your HTML pages
+app.get("/", (req, res) => {
+	res.sendFile("public/index.html", { root: __dirname });
+});
+
+app.get("/gallery", (req, res) => {
+	res.sendFile("public/gallery.html", { root: __dirname });
+});
+
+app.get("/prices", (req, res) => {
+	res.sendFile("public/prices.html", { root: __dirname });
+});
 
 app.post("/submit-form", async (req, res) => {
 	try {
